@@ -1,0 +1,468 @@
+
+
+    @Test
+    public void shouldCheckThatHeadWillFitThroughTheWindowTest1Task1() throws Exception {
+        int a = 5;
+        int b = 7;
+        int d = 3;
+        boolean actualSize = task1(a, b, d);
+        assertTrue(actualSize);
+    }
+
+
+    @Test
+    public void shouldCheckThatHeadWillNotFitThroughTheWindowTest2Task1() throws Exception {
+        int a = 5;
+        int b = 7;
+        int d = 5;
+        boolean actualSize = task1(a, b, d);
+        assertFalse(actualSize);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldTestCheckThatInputParamsZeroTest3Task1() throws Exception {
+        int a = 5;
+        int b = 7;
+        int d = 0;
+        task1(a, b, d);
+    }
+
+    @Test
+    public void shouldCheckThatNotOnlyOneIsEvenTest1Task2A() throws Exception {
+        //input params
+        int a = 6;
+        int b = 6;
+
+        //after call
+        boolean actualValue = task2A(a, b);
+
+        //expected
+        assertFalse(actualValue);
+    }
+
+    @Test
+    public void shouldCheckThatOnlyOneIsEvenTest2Task2A() throws Exception {
+        int a = 5;
+        int b = 6;
+        boolean actualValue = task2A(a, b);
+        assertTrue(actualValue);
+    }
+
+    @Test
+    public void shouldCheckThatNoOneIsEvenTest3Task2A() throws Exception {
+        int a = 5;
+        int b = 7;
+        boolean actualValue = task2A(a, b);
+        assertFalse(actualValue);
+    }
+
+    @Test
+    public void shouldCheckThatAtLeastOneOfTheNumbersIsPositiveTest1Task2B() throws Exception {
+        int a = 6;
+        int b = -6;
+        boolean actualValue = task2B(a, b);
+        assertTrue(actualValue);
+    }
+
+    @Test
+    public void shouldCheckThatNoOneNumberIsPositiveTest2Task2B() throws Exception {
+        int a = -6;
+        int b = -6;
+        boolean actualValue = task2B(a, b);
+        assertFalse(actualValue);
+    }
+
+    @Test
+    public void shouldCheckThatBothNumbersArePositiveTest3Task2B() throws Exception {
+        int a = 6;
+        int b = 6;
+        boolean actualValue = task2B(a, b);
+        assertTrue(actualValue);
+    }
+
+    @Test
+    public void shouldCalculatePerimeterTest1Task3() throws Exception {
+        int side = 2;
+        int actualPerimeter = task3(side);
+        int expectedPerimeter = side * 4;
+        assertEquals(expectedPerimeter, actualPerimeter);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldCheckThatSideIsZeroTest2Task3() throws Exception {
+        int side = 0;
+        int actualPerimeter = task3(side);
+        int expectedPerimeter = Math.abs(side * 4);
+        assertEquals(expectedPerimeter, actualPerimeter);
+    }
+
+    @Test
+    public void shouldCalculatePerimeterWithNegativeSideAndReturnCorrectValueTest3Task3() throws Exception {
+        int side = -2;
+        int actualPerimeter = task3(side);
+        int expectedPerimeter = Math.abs(side * 4);
+        assertEquals(expectedPerimeter, actualPerimeter);
+    }
+
+
+    @Test
+    public void shouldCalculateCircumferenceTest1Task4A() throws Exception {
+        int r = 3;
+        double delta = 0.001;
+        double actualCircumference = task4A(r);
+        double expectedCircumference = 2 * Math.PI * r;
+        assertEquals(expectedCircumference, actualCircumference, delta);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldCheckThatRadiusIsZeroAndReturnFalseTest2Task4A() throws Exception {
+        int r = 0;
+        double delta = 0.001;
+        double actualCircumference = task4A(r);
+        double expectedCircumference = 2 * Math.PI * r;
+        assertEquals(expectedCircumference, actualCircumference, delta);
+    }
+
+    @Test
+    public void shouldCalculatePerimeterWithNegativeRadiusTest3Task4A() throws Exception {
+        int r = -4;
+        double delta = 0.001;
+        double actualCircumference = task4A(r);
+        double expectedCircumference = Math.abs(2 * Math.PI * r);
+        assertEquals(expectedCircumference, actualCircumference, delta);
+    }
+
+    @Test
+    public void shouldCalculateAreaOfACircleTest1Task4B() throws Exception {
+        int r = 3;
+        double delta = 0.001;
+        float actualAreaOfACircle = task4B(r);
+        float expectedAreaOfACircle = 2 * (float) Math.PI * (r ^ 2);
+        assertEquals(expectedAreaOfACircle, actualAreaOfACircle, delta);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldCheckThatRadiusIsZeroAndReturnFalseTest2Task4B() throws Exception {
+        int r = 0;
+        double delta = 0.001;
+        double actualCircumference = task4B(r);
+        double expectedCircumference = 2 * (float) Math.PI * (r ^ 2);
+        assertEquals(expectedCircumference, actualCircumference, delta);
+    }
+
+    @Test
+    public void shouldCalculateAreaOfACircleWithNegativeRadiusTest3Task4B() throws Exception {
+        int r = -3;
+        double delta = 0.001;
+        double actualCircumference = task4B(r);
+        double expectedCircumference = Math.abs(2 * (float) Math.PI * (r ^ 2));
+        assertEquals(expectedCircumference, actualCircumference, delta);
+    }
+
+    @Test
+    public void shouldCheckOnCorrectResultTest1Task5() throws Exception {
+        int[] actualArr = task5(27);
+        int[] expectedArr = {2, 7, 9, 14};
+        assertArrayEquals(expectedArr, actualArr);
+    }
+
+    @Test
+    public void shouldCheckOnEmptyArrayTest2Task5() throws Exception {
+        int[] actualArr = task5(0);
+        int[] expectedArr = {};
+        assertArrayEquals(expectedArr, actualArr);
+    }
+
+    @Test
+    public void shouldTestOnCorrectResultTest1Task6() throws Exception {
+        int dayNumber = 5;
+        String actualDay = task6(dayNumber);
+        String expectedDay = "Friday";
+        assertEquals(expectedDay, actualDay);
+    }
+
+    @Test
+    public void shouldTestThatInputIsCorrectTest2Task6() throws Exception {
+        int dayNumber = 8;
+        String actualDay = task6(dayNumber);
+        String expectedDay = "It is not a weekday";
+        assertEquals(expectedDay, actualDay);
+    }
+
+    @Test
+    public void shouldTestThatInputIsCorrectTest3Task6() throws Exception {
+        int dayNumber = -3;
+        String actualDay = task6(dayNumber);
+        String expectedDay = "It is not a weekday";
+        assertEquals(expectedDay, actualDay);
+    }
+
+    @Test
+    public void shouldCheckTheSumOfKilosTest1Task7() throws Exception {
+        String[] actualArr = task7(10);
+        String expectedWeight = 10 + " lb = " + 10 * 0.453f + " kg";
+        assertEquals(expectedWeight, actualArr[actualArr.length - 1]);
+    }
+
+    @Test
+    public void shouldCheckTheSumOfKilosTest2Task7() throws Exception {
+        String[] actualArr = task7(7);
+        String expectedWeight = 7 + " lb = " + 7 * 0.453f + " kg";
+        assertEquals(expectedWeight, actualArr[actualArr.length - 1]);
+    }
+
+    @Test
+    public void shouldCheckNumberOfElementsTest3Task7() throws Exception {
+        String[] actualArr = task7(0);
+        assertTrue(actualArr.length == 0);
+    }
+
+    @Test
+    public void shouldCheckTheAmountOfUAHTest1Task8() throws Exception {
+        int count = 20;
+        float rate = 25.3f;
+        String[] actualArr = task8(rate, count);
+        String expectedArr = count + " UAH = " + count * rate + " $";
+        assertEquals(expectedArr, actualArr[actualArr.length - 1]);
+    }
+
+    @Test
+    public void shouldCheckTheAmountOfUAHTest2Task8() throws Exception {
+        int count = 7;
+        float rate = 25.3f;
+        String[] actualArr = task8(rate, count);
+        String expectedArr = count + " UAH = " + count * rate + " $";
+        assertEquals(expectedArr, actualArr[actualArr.length - 1]);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldCheckThatRateIsZeroAndReturnFalseTest2Task8() throws Exception {
+        float rate = 0;
+        task8(rate, 10);
+    }
+
+    @Test
+    public void shouldCountAmoebaTest1Task9() throws Exception {
+        int period = 30;
+        int[] actualArr = task9(period);
+        int expectedAmoeba = (int) Math.pow(2, period / 3);
+        assertEquals(expectedAmoeba, actualArr[period / 3 - 1]);
+    }
+
+    @Test
+    public void shouldCountAmoebaTest2Task9() throws Exception {
+        int period = 0;
+        int[] actualArr = task9(period);
+        assertTrue(actualArr.length == 0);
+    }
+
+    @Test
+    public void shouldCountAmoebaTest3Task9() throws Exception {
+        int period = 22;
+        int[] actualArr = task9(period);
+        int expectedAmoeba = (int) Math.pow(2, period / 3);
+        assertEquals(expectedAmoeba, actualArr[period / 3 - 1]);
+    }
+
+
+    @Test
+    public void shouldCheckOnCorrectResultTest1Task10() throws Exception {
+        int monthNumber = 5;
+        String actualSeason = task10(monthNumber);
+        String expectedSeason = "Spring";
+        assertEquals(expectedSeason, actualSeason);
+    }
+
+    @Test
+    public void shouldCheckOnCorrectResultTest2Task10() throws Exception {
+        int monthNumber = 0;
+        String actualSeason = task10(monthNumber);
+        String expectedSeason = "It is not a month";
+        assertEquals(expectedSeason, actualSeason);
+    }
+
+    @Test
+    public void shouldCheckOnCorrectResultTest3Task10() throws Exception {
+        int monthNumber = -3;
+        String actualSeason = task10(monthNumber);
+        String expectedSeason = "It is not a month";
+        assertEquals(expectedSeason, actualSeason);
+    }
+
+    @Test
+    public void shouldCheckCorrectConvertWorldTest1Task12() throws Exception {
+        Integer res = 123;
+        Integer actualNumber = task12(res);
+        Integer expectedNumber = 321;
+        assertEquals(expectedNumber, actualNumber);
+    }
+
+    @Test
+    public void shouldCheckCorrectConvertWorldTest2Task12() throws Exception {
+        Integer res = 978;
+        Integer actualNumber = task12(res);
+        Integer expectedNumber = 879;
+        assertEquals(expectedNumber, actualNumber);
+    }
+
+    @Test(expected = Exception.class)
+    public void shouldCheckCorrectConvertWorldTest3Task12() throws Exception {
+        Integer res = 110;
+        task12(res);
+    }
+
+    @Test
+    public void shouldCheckOnCorrectResultTest1Task13() throws Exception {
+        int[] arr = {13, 11, 15, 13, 14, 15, 16, 17, 34, 19, 56, 21, 22, 53, 24, 88, 8, 5, 15, 20};
+        int actualMin = task13(arr);
+        int expectedMin = 5;
+        assertEquals(expectedMin, actualMin);
+    }
+
+    @Test
+    public void shouldCheckOnCorrectResultTest2Task13() throws Exception {
+        int[] arr = {13, 11, 15, 13, 14, -15, 16, 17, 34, 19, 56, -21, 22, 53, 24, 88, 8, 5, 15, 20};
+        int actualMin = task13(arr);
+        int expectedMin = -21;
+        assertEquals(expectedMin, actualMin);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsEmptyTest3Task13() throws Exception {
+        int[] arr = {};
+        int actualMin = task13(arr);
+        int expectedMin = 0;
+        assertEquals(expectedMin, actualMin);
+    }
+
+    @Test
+    public void shouldCheckCorrectSortTestSelectionSort() throws Exception {
+        int[] arr = {3, 2, 5, 7, 1, 4, 3};
+        selectionSort(arr);
+        int[] expectedArr = {1, 2, 3, 3, 4, 5, 7};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsEmptyTestSelectionSort() throws Exception {
+        int[] arr = {};
+        selectionSort(arr);
+        int[] expectedArr = {};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsNullTestSelectionSort() throws Exception {
+        int[] arr = null;
+        selectionSort(arr);
+        assertNull(arr);
+    }
+
+    @Test
+    public void shouldCheckCorrectSortTestBubbleSort() throws Exception {
+        int[] arr = {3, 2, 5, 7, 1, 4, 3};
+        bubbleSort(arr);
+        int[] expectedArr = {1, 2, 3, 3, 4, 5, 7};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsEmptyTest1InsertSort() throws Exception {
+        int[] arr = {};
+        insertionSort(arr);
+        int[] expectedArr = {};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckCorrectSortTest2InsertSort() throws Exception {
+        int[] arr = {3, 2, 5, 7, 1, 4, 3};
+        insertionSort(arr);
+        int[] expectedArr = {1, 2, 3, 3, 4, 5, 7};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsEmptyTest3InsertSort() throws Exception {
+        int[] arr = {};
+        insertionSort(arr);
+        int[] expectedArr = {};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void shouldCheckThatArrayIsNullTestBubbleSort() throws Exception {
+        int[] arr = null;
+        bubbleSort(arr);
+        assertNull(arr);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest1() throws Exception {
+        String actualWord = convertNumberToWord(6);
+        String expectedWord = "רוסעü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest2() throws Exception {
+        String actualWord = convertNumberToWord(0);
+        String expectedWord = "םמכü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest3() throws Exception {
+        String actualWord = convertNumberToWord(5);
+        String expectedWord = "ןÿעü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest4() throws Exception {
+        String actualWord = convertNumberToWord(17);
+        String expectedWord = "סולüםאהצאעü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest5() throws Exception {
+        String actualWord = convertNumberToWord(55);
+        String expectedWord = "ןÿעüהוסÿע ןÿעü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest6() throws Exception {
+        String actualWord = convertNumberToWord(100);
+        String expectedWord = "סעמ";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest7() throws Exception {
+        String actualWord = convertNumberToWord(107);
+        String expectedWord = "סעמ סולü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest8() throws Exception {
+        String actualWord = convertNumberToWord(114);
+        String expectedWord = "סעמ קועûנםאהצאעü";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest9() throws Exception {
+        String actualWord = convertNumberToWord(150);
+        String expectedWord = "סעמ ןÿעüהוסÿע";
+        assertEquals(expectedWord, actualWord);
+    }
+
+    @Test
+    public void shouldConvertNumberToWordTest10() throws Exception {
+        String actualWord = convertNumberToWord(987);
+        String expectedWord = "הוגÿעüסמע גמסולüהוסÿע סולü";
+        assertEquals(expectedWord, actualWord);
+    }
