@@ -3,18 +3,20 @@ package com.levelup.table.entity;
 /**
  * Created by Alexandr Shegeda on 24.07.16.
  */
-public class Citizen {
-    private Long id;
+
+public class Citizen extends Entity {
+
     private String firstName;
     private String lastName;
     private int age;
     private Integer streetId;
 
-    public Citizen() {
-    }
+  public Citizen(final Long id) {
+    super(id);
+  }
 
-    public Citizen(Long id, String firstName, String lastName, int age, Integer streetId) {
-        this.id = id;
+  public Citizen(Long id, String firstName, String lastName, int age, Integer streetId) {
+        super(id);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -22,22 +24,11 @@ public class Citizen {
     }
 
     public Citizen(String firstName, String lastName, int age, Integer streetId) {
+      super(null);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.streetId = streetId;
-    }
-
-    public Citizen(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -75,7 +66,7 @@ public class Citizen {
     @Override
     public String toString() {
         return "Citizen{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +

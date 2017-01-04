@@ -1,9 +1,9 @@
 package com.levelup.table.view;
 
 import com.levelup.table.dao.DataProvider;
-import com.levelup.table.dao.impl.CitizenSQLDAOImpl;
-import com.levelup.table.dao.impl.SQLDataProvider;
-import com.levelup.table.dao.impl.StreetSQLDAOImpl;
+import com.levelup.table.dao.impl.sql.CitizenSQLDAOImpl;
+import com.levelup.table.dao.dataproviders.SQLDataProvider;
+import com.levelup.table.dao.impl.sql.StreetSQLDAOImpl;
 import com.levelup.table.view.impl.CitizenTablePanel;
 import com.levelup.table.view.impl.StreetTablePanel;
 
@@ -39,10 +39,10 @@ public class ToolPanel extends JPanel {
         JToggleButton btnConnect = new JToggleButton("Connect");
         JToggleButton btnDisConnect = new JToggleButton("Disconnect");
 
-        JButton btnCreate = new JButton("Create");
-        JButton btnRead = new JButton("Read");
-        JButton btnUpdate = new JButton("Update");
-        JButton btnDelete = new JButton("Delete");
+        JButton btnCreate = new JButton("create");
+        JButton btnRead = new JButton("read");
+        JButton btnUpdate = new JButton("update");
+        JButton btnDelete = new JButton("delete");
 
         bg.add(btnConnect);
         bg.add(btnDisConnect);

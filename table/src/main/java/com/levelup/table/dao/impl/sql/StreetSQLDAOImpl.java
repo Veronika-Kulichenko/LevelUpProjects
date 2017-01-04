@@ -1,6 +1,7 @@
-package com.levelup.table.dao.impl;
+package com.levelup.table.dao.impl.sql;
 
 import com.levelup.table.dao.DAO;
+import com.levelup.table.dao.dataproviders.SQLDataProvider;
 import com.levelup.table.dao.mapper.StreetRowMapper;
 import com.levelup.table.entity.Street;
 
@@ -27,7 +28,7 @@ public class StreetSQLDAOImpl implements DAO<Street> {
 
 
     @Override
-    public void Create(Street street) {
+    public void create(Street street) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = sqlDataProvider.getPreparedStatement(INSERT_STREET, Statement.RETURN_GENERATED_KEYS);
@@ -46,7 +47,7 @@ public class StreetSQLDAOImpl implements DAO<Street> {
     }
 
     @Override
-    public ArrayList<Street> Read() {
+    public ArrayList<Street> read() {
         ArrayList<Street> result = new ArrayList<>();
         Statement statement = null;
         try {
@@ -68,7 +69,7 @@ public class StreetSQLDAOImpl implements DAO<Street> {
     }
 
     @Override
-    public void Update(Street street) {
+    public void update(Street street) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = sqlDataProvider.getPreparedStatement(UPDATE_STREET);
@@ -90,7 +91,7 @@ public class StreetSQLDAOImpl implements DAO<Street> {
     }
 
     @Override
-    public void Delete(Street street) {
+    public void delete(Street street) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = sqlDataProvider.getPreparedStatement(DELETE_STREET);

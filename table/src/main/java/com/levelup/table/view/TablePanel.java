@@ -32,7 +32,7 @@ public abstract class TablePanel<T> extends JPanel implements Action {
         add(scrollPane);
         setSize(new Dimension(595, 300));
 
-        List<T> data = dao.Read();
+        List<T> data = dao.read();
         refreshDataView(data);
     }
 
@@ -50,32 +50,32 @@ public abstract class TablePanel<T> extends JPanel implements Action {
     public void create() {
         dialog.setVisible(true);
         if(dialog.isOkPressed()){
-            dao.Create(dialog.get());
-            List<T> data = dao.Read();
+            dao.create(dialog.get());
+            List<T> data = dao.read();
             refreshDataView(data);
         }
     }
 
     @Override
     public void read() {
-        List<T> data = dao.Read();
+        List<T> data = dao.read();
         refreshDataView(data);
     }
 
     @Override
     public void update() {
         for (T t : tableContainer.getUpdated()) {
-            dao.Update(t);
+            dao.update(t);
         }
         tableContainer.clearUpdated();
-        List<T> data = dao.Read();
+        List<T> data = dao.read();
         refreshDataView(data);
     }
 
     @Override
     public void delete() {
         T t = tableContainer.getSelectedRowData(table.getSelectedRow());
-        dao.Delete(t);
+        dao.delete(t);
         List<T> data = tableContainer.getData();
         data.remove(t);
         refreshDataView(data);
@@ -85,7 +85,7 @@ public abstract class TablePanel<T> extends JPanel implements Action {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<T> data = dao.Read();
+                List<T> data = dao.read();
                 refreshDataView(data);
             }
         };

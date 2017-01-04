@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public interface DAO<T> {
 
-    void Create(T t);
+    void create(T t);
 
-    ArrayList<T> Read();
+    ArrayList<T> read();
 
-    void Update(T t);
+    void update(T t);
 
-    void Delete(T t);
+    void delete(T t);
 
     T getOneById(long id);
 }

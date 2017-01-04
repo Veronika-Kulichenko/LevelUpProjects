@@ -1,6 +1,7 @@
-package com.levelup.table.dao.impl;
+package com.levelup.table.dao.impl.sql;
 
 import com.levelup.table.dao.DAO;
+import com.levelup.table.dao.dataproviders.SQLDataProvider;
 import com.levelup.table.dao.mapper.CitizenRowMapper;
 import com.levelup.table.entity.Citizen;
 
@@ -25,7 +26,7 @@ public class CitizenSQLDAOImpl implements DAO<Citizen> {
     }
 
     @Override
-    public void Create(Citizen citizen) {
+    public void create(Citizen citizen) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = sqlDataProvider.getPreparedStatement(INSERT_CITIZEN, Statement.RETURN_GENERATED_KEYS);
@@ -56,7 +57,7 @@ public class CitizenSQLDAOImpl implements DAO<Citizen> {
     }
 
     @Override
-    public ArrayList<Citizen> Read() {
+    public ArrayList<Citizen> read() {
         ArrayList<Citizen> result = new ArrayList<>();
         Statement statement = null;
         try {
@@ -114,7 +115,7 @@ public class CitizenSQLDAOImpl implements DAO<Citizen> {
     }
 
     @Override
-    public void Update(Citizen citizen) {
+    public void update(Citizen citizen) {
         PreparedStatement preparedStatement = null;
 
         try {
@@ -141,7 +142,7 @@ public class CitizenSQLDAOImpl implements DAO<Citizen> {
     }
 
     @Override
-    public void Delete(Citizen citizen) {
+    public void delete(Citizen citizen) {
         PreparedStatement preparedStatement = null;
 
         try {

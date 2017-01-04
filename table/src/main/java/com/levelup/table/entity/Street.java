@@ -3,28 +3,25 @@ package com.levelup.table.entity;
 /**
  * Created by Alexandr Shegeda on 24.07.16.
  */
-public class Street {
-    private long id;
-    private String streetName;
+public class Street extends Entity {
 
-    public Street() {
+  public Street() {
+  }
+
+  private String streetName;
+
+  public Street(final Long id) {
+    super(id);
+  }
+
+  public Street(String streetName) {
+      super(null);
+      this.streetName = streetName;
     }
 
-    public Street(String streetName) {
+    public Street(Long id, String streetName) {
+        super(id);
         this.streetName = streetName;
-    }
-
-    public Street(long id, String streetName) {
-        this.id = id;
-        this.streetName = streetName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getStreetName() {
@@ -34,4 +31,9 @@ public class Street {
     public void setStreetName(String streetName) {
         this.streetName = streetName;
     }
+
+  @Override
+  public String toString() {
+    return "Street{" + "id=" + getId() + ", streetName='" + streetName + '\'' + '}';
+  }
 }

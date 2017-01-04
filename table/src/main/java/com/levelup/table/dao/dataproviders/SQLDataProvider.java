@@ -1,4 +1,4 @@
-package com.levelup.table.dao.impl;
+package com.levelup.table.dao.dataproviders;
 
 import com.levelup.table.dao.DataProvider;
 
